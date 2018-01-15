@@ -1,0 +1,15 @@
+{
+    "presets": ["es2015", "stage-0", "react"],
+    /* if you want to use babel runtime, uncomment the following
+		  * line */
+    "plugins": [
+        "transform-es2015-modules-commonjs",
+        "transform-object-rest-spread",
+        "react-hot-loader/babel"
+    ],
+    "env": {
+        "build": {
+            "optional": ["optimisation", "minification"]
+        }
+    }
+}
