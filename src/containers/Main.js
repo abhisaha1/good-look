@@ -1,8 +1,4 @@
 import React, { Component } from "react";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import { getWelcomeData, loginAction } from "../redux/actions/ActionCreators";
-import Login, { LoginHeader } from "../components/Login";
 
 import "../../public/scss/style.scss";
 
@@ -25,20 +21,4 @@ class Main extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        welcome: state.welcome,
-        user: state.user
-    };
-};
-
-const mapDispatchToProps = dispatch => {
-    return bindActionCreators(
-        {
-            getWelcomeData,
-            loginAction
-        },
-        dispatch
-    );
-};
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default Main;

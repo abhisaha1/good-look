@@ -45,13 +45,13 @@ module.exports = function(req, res) {
         () => {
             const data = store.getState();
             const context = {};
-            const renderedComponent = ReactDOM.renderToString(
-                <StaticRouter context={context} location={req.url}>
-                    <Provider store={store}>
-                        <App routes={routes} initialData={data} />
-                    </Provider>
-                </StaticRouter>
-            );
+            // const renderedComponent = ReactDOM.renderToString(
+            //     <StaticRouter context={context} location={req.url}>
+            //         <Provider store={store}>
+            //             <App routes={routes} initialData={data} />
+            //         </Provider>
+            //     </StaticRouter>
+            // );
 
             if (context.url) {
                 res.redirect(context.url);
@@ -70,7 +70,7 @@ module.exports = function(req, res) {
                     <meta name="mobile-web-app-capable" content="yes">
                   </head>
                   <body id="client">
-                    <div id="app">${renderedComponent}</div>
+                    <div id="app"></div>
                     <script type="application/javascript">
                        window.__INITIAL_STATE__ = ${JSON.stringify(data)};
                        window.ENV = "${process.env.NODE_ENV}";

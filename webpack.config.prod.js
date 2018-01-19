@@ -23,7 +23,8 @@ module.exports = {
         new webpack.DefinePlugin({
             "process.env": {
                 NODE_ENV: "'production'"
-            }
+            },
+            ASSETS: "public/"
         }),
         new BabiliPlugin(),
         extractSass,

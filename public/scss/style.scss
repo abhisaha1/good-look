@@ -1,3 +1,208 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700");
+@import "../css/react-select.css";
+@import "./calendar.scss";
 body {
-    background: #ccc;
+    font-family: "Nunito", sans-serif;
+    font-size: 12px;
+    background: #eee;
+}
+
+.container {
+    padding-top: 40px;
+    padding-bottom: 64px;
+    width: 100%;
+    max-width: 1286px;
+    margin: auto;
+}
+
+.navbar-nav > li > a {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 80px;
+}
+
+@media (max-width: 767px) {
+    .navbar-nav > li > a {
+        line-height: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+.navbar {
+    border-radius: 0px;
+    min-height: 80px;
+    .navbar-brand {
+        line-height: 50px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #fff;
+    }
+    background: #000 !important;
+    li a {
+        text-transform: uppercase;
+        color: #fff !important;
+        letter-spacing: 2px;
+        font-weight: 300;
+        font-size: 10px;
+    }
+}
+
+.steps {
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+    max-width: 600px;
+    .step {
+        width: 24px;
+        height: 3px;
+        background: #979797;
+        &.active {
+            background: #000;
+        }
+    }
+}
+
+.page-header {
+    padding: 0 0 50px 0;
+    margin-top: 48px;
+    text-align: center;
+    text-transform: uppercase;
+    .step-no {
+        margin-right: 16px;
+    }
+    h1 {
+        font-size: 16px;
+        letter-spacing: 3px;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 402px);
+    grid-gap: 25px;
+    justify-content: center;
+    .grid-item {
+        text-align: center;
+        height: 240px;
+        background: #000;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        &:hover {
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.856);
+        }
+    }
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 402px);
+    grid-gap: 26px;
+    justify-content: center;
+    .grid-item {
+        text-align: center;
+        height: 240px;
+        background: #000;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        &:hover {
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.856);
+        }
+    }
+}
+
+.grid-6 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 196px);
+    grid-gap: 16px;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 500;
+    .grid-item {
+        text-align: center;
+        height: 240px;
+        background: #000;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        &:hover {
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.856);
+        }
+    }
+}
+
+.grid-item.label-bottom {
+    align-items: flex-end;
+    .item-label {
+        background: #000;
+        width: 100%;
+        padding: 24px;
+    }
+    .item-label-slim {
+        padding: 24px;
+        color: #000;
+    }
+}
+
+/*-------------------------------
+[Radio Button Group]
+*/
+
+.rb-wrapper {
+    clear: both;
+    display: inline-block;
+    .rb {
+        position: absolute;
+        left: -9999em;
+        top: -9999em;
+        & + label {
+            padding: 22px 37px;
+            cursor: pointer;
+            margin-right: 8px;
+            color: rgb(141, 141, 141);
+            background-color: #f5f7f9;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        &:checked + label {
+            background-color: #000;
+            color: #fff;
+        }
+    }
+}
+
+.city-block {
+    padding-left: 60px;
+}
+
+.mt-60 {
+    margin-top: 60px;
+}
+
+.btn-dark {
+    background: #fff;
+    border-radius: 0;
+    color: #000;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: 0.1s all linear;
+    border: 1px solid #000;
+    &:hover {
+        background: #000;
+        color: #fff;
+        border: 1px solid transparent;
+    }
 }

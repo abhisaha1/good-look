@@ -18,7 +18,8 @@ module.exports = {
         new webpack.DefinePlugin({
             "process.env": {
                 NODE_ENV: '"dev"'
-            }
+            },
+            ASSETS: ""
         }),
         // enable HMR globally
         new webpack.NamedModulesPlugin()

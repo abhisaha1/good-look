@@ -7,11 +7,10 @@ import store from "./redux/createStore";
 import Main from "./containers/Main";
 import App from "./containers/App";
 import routes from "./routes";
-import history from "./history";
 
 const render = App => {
     ReactDOM.render(
-        <HashRouter history={history}>
+        <HashRouter>
             <Provider store={store}>
                 <App />
             </Provider>
