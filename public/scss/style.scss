@@ -15,14 +15,18 @@ body {
     margin: auto;
 }
 
-.navbar-nav>li>a {
+.content {
+    margin-bottom: 80px;
+}
+
+.navbar-nav > li > a {
     padding-top: 0px;
     padding-bottom: 0px;
     line-height: 80px;
 }
 
 @media (max-width: 767px) {
-    .navbar-nav>li>a {
+    .navbar-nav > li > a {
         line-height: 20px;
         padding-top: 10px;
         padding-bottom: 10px;
@@ -53,12 +57,25 @@ body {
     margin: auto;
     justify-content: space-around;
     max-width: 600px;
+    align-items: center;
     .step {
         width: 24px;
         height: 3px;
-        background: #979797;
-        &.active {
+        background: #cacaca;
+        &.active.clickable {
             background: #000;
+            height: 4px;
+        }
+        &:hover {
+            cursor: not-allowed;
+        }
+        &.clickable:hover {
+            background: #000 !important;
+            height: 4px;
+            cursor: pointer;
+        }
+        &.clickable {
+            background: #6b6b6b;
         }
     }
 }
@@ -155,7 +172,6 @@ body {
     }
 }
 
-
 /*-------------------------------
 [Radio Button Group]
 */
@@ -167,7 +183,7 @@ body {
         position: absolute;
         left: -9999em;
         top: -9999em;
-        &+label {
+        & + label {
             padding: 22px 37px;
             cursor: pointer;
             margin-right: 8px;
@@ -176,7 +192,7 @@ body {
             text-transform: uppercase;
             letter-spacing: 2px;
         }
-        &:checked+label {
+        &:checked + label {
             background-color: #000;
             color: #fff;
         }
@@ -192,28 +208,38 @@ body {
 }
 
 .btn-dark {
-    background: #fff;
-    border-radius: 0;
+    background: transparent;
     color: #000;
     text-transform: uppercase;
-    padding: 12px 24px;
-    font-weight: 600;
+    padding: 6px 16px;
+    font-weight: 700;
     letter-spacing: 2px;
-    transition: 0.1s all linear;
-    border: 1px solid #000;
+    transition: 0.2s border linear;
+    border: none;
+    border-radius: 0px;
     &:hover {
-        background: #000;
-        color: #fff;
-        border: 1px solid transparent;
+        border: none;
+        background: transparent;
+        color: initial;
     }
 }
 
 .selected:before {
-    content: "‎✔";
+    content: "‎\2713";
     width: 26px;
-    height: 29px;
+    height: 26px;
     color: #fff;
     background: black;
     position: absolute;
     padding: 8px;
+    padding-top: 4px;
+}
+
+.full-width-fixed {
+    position: fixed;
+    left: 15px;
+    bottom: 0px;
+    width: 100vw;
+    background: #d8d7d7;
+    padding: 10px 0;
 }

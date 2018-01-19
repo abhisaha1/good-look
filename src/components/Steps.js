@@ -14,11 +14,11 @@ const Steps = ({ stepNo, stepsCompleted, changeStep }) => {
 
     const data = steps.map((item, idx) => {
         let i = idx + 1;
-        let active = stepNo === i ? "active" : "";
-        let clickable = stepsCompleted + 1 >= i ? "clickable" : "";
+        let classes = stepNo === i ? "active " : "";
+        classes += stepsCompleted + 1 >= i ? "clickable" : "";
         return (
             <Link
-                className={`page-${i} ${active} step ${clickable}`}
+                className={`page-${i} ${classes} step`}
                 key={i}
                 to=""
                 onClick={e => handleStep(e, i)}

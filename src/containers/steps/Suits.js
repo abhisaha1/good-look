@@ -55,11 +55,11 @@ export default class Suits extends Component {
                             );
                         })}
                     </div>
-                    <Next
-                        saveStepData={this.props.saveStepData}
-                        state={this.state}
-                    />
                 </div>
+                <Next
+                    saveStepData={this.props.saveStepData}
+                    state={this.state}
+                />
             </div>
         );
     }

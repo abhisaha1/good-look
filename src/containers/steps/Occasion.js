@@ -54,11 +54,11 @@ export default class Occasion extends Component {
                             );
                         })}
                     </div>
-                    <Next
-                        saveStepData={this.props.saveStepData}
-                        state={this.state}
-                    />
                 </div>
+                <Next
+                    saveStepData={this.props.saveStepData}
+                    state={this.state}
+                />
             </div>
         );
     }

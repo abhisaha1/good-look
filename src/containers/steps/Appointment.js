@@ -157,13 +157,12 @@ export default class Appointment extends Component {
                                 <div className="rb-wrapper">{dayPhases}</div>
                             </div>
                         </div>
-
-                        <Next
-                            saveStepData={this.props.saveStepData}
-                            state={this.state}
-                        />
                     </div>
                 </div>
+                <Next
+                    saveStepData={this.props.saveStepData}
+                    state={this.state}
+                />
             </div>
         );
     }

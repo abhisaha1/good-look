@@ -43,11 +43,11 @@ export default class Mode extends Component {
                             );
                         })}
                     </div>
-                    <Next
-                        saveStepData={this.props.saveStepData}
-                        state={this.state}
-                    />
                 </div>
+                <Next
+                    saveStepData={this.props.saveStepData}
+                    state={this.state}
+                />
             </div>
         );
     }

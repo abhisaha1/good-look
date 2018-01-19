@@ -2,8 +2,8 @@ import React from "react";
 
 const Next = props => {
     return (
-        <div className="row ">
-            <div className="col-lg-12 mt-60 text-center">
+        <div className="row full-width-fixed">
+            <div className="col-lg-12 text-right">
                 <button
                     className="btn btn-xs btn-dark btn-default"
                     onClick={() =>

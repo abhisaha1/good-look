@@ -68,11 +68,11 @@ export default class Brand extends Component {
                             );
                         })}
                     </div>
-                    <Next
-                        saveStepData={this.props.saveStepData}
-                        state={this.state}
-                    />
                 </div>
+                <Next
+                    saveStepData={this.props.saveStepData}
+                    state={this.state}
+                />
             </div>
         );
     }
