@@ -16,7 +16,7 @@ export default class Pants extends Component {
 
     handleClick(e, index, type) {
         e.preventDefault();
-        let item = config.style[index];
+        let item = config[type][index];
         let stateIndex = this.state[type].indexOf(item.label);
         if (stateIndex >= 0) {
             // remove this key
