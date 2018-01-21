@@ -14,6 +14,10 @@ import Outwear from "./steps/Outwear";
 import Pants from "./steps/Pants";
 import Suits from "./steps/Suits";
 import Shoes from "./steps/Shoes";
+import Sizes from "./steps/Sizes";
+import Budget from "./steps/Budget";
+import About from "./steps/About";
+import Done from "./steps/Done";
 import Steps from "../components/Steps";
 
 import "../../public/scss/style.scss";
@@ -104,6 +108,32 @@ class App extends Component {
                         component={props => (
                             <Shoes {...props} {...this.props} />
                         )}
+                    />
+                    <Route
+                        exact
+                        path="/12"
+                        component={props => (
+                            <Sizes {...props} {...this.props} />
+                        )}
+                    />
+                    <Route
+                        exact
+                        path="/13"
+                        component={props => (
+                            <Budget {...props} {...this.props} />
+                        )}
+                    />
+                    <Route
+                        exact
+                        path="/14"
+                        component={props => (
+                            <About {...props} {...this.props} />
+                        )}
+                    />
+                    <Route
+                        exact
+                        path="/15"
+                        component={props => <Done {...props} {...this.props} />}
                     />
                 </div>
             </div>

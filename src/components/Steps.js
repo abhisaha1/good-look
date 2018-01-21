@@ -5,7 +5,7 @@ const Steps = ({ stepNo, stepsCompleted, changeStep }) => {
     /*-----------------------------
      [Create an array of 14 steps]
      */
-    const steps = Array.apply(null, { length: 14 });
+    const steps = Array.apply(null, { length: 15 });
 
     const handleStep = (e, cursor) => {
         e.preventDefault();

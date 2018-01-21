@@ -37,7 +37,7 @@ export default class Wear extends Component {
                 <Header
                     stepNo={this.props.stepNo}
                     title="I like to wear"
-                    subtitle="Select all relevant options"
+                    subtitle="( Select all relevant options )"
                 />
                 <div className="content">
                     <div className="grid">

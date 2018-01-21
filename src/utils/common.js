@@ -364,8 +364,30 @@ export const config = {
             label: "Boots"
         },
         {
-            image: ".jpg",
-            label: ""
+            image: "",
+            label: "Not required"
         }
-    ]
+    ],
+    sizes_uw: ["xs", "s", "m", "l", "xl", "xxl"],
+    sizes_shirts: [
+        "34 - xs",
+        "36 - s",
+        "38 - m",
+        "40 - m/l",
+        "42 - l",
+        "44 - xl",
+        "46 - xxl",
+        "don't know"
+    ],
+    sizes_pj: [28, 29, 30, 31, 32, 33, 34, 35, 36, 38],
+    sizes_shoes: [
+        "7/40.5",
+        "8/42",
+        "9/43",
+        "10/44.5",
+        "11/46",
+        "12/47",
+        "13/48"
+    ],
+    hair: ["Blonde", "Dark Blonde", "Red", "Brown", "Black", "Grey", "None"]
 };

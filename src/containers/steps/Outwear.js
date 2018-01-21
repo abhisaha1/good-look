@@ -37,7 +37,7 @@ export default class Outwear extends Component {
                 <Header
                     stepNo={this.props.stepNo}
                     title="What's your outwear"
-                    subtitle="(Select all relevant options)"
+                    subtitle="( Select all relevant options )"
                 />
                 <div className="content">
                     <div className="grid">

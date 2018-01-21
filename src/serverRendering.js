@@ -63,9 +63,7 @@ module.exports = function(req, res) {
                     <meta charset="UTF-8">
                     <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
                     <link rel="stylesheet" href="/css/bootstrap.min.css">
-                    <link rel='stylesheet' href='/css/font-awesome.min.css' type='text/css' media='all'/>
                     <title>Ajaxtown</title>
-                    <link rel="stylesheet" href="/css/style.css">
                     <meta name="apple-mobile-web-app-capable" content="yes">
                     <meta name="mobile-web-app-capable" content="yes">
                   </head>
@@ -76,6 +74,15 @@ module.exports = function(req, res) {
                        window.ENV = "${process.env.NODE_ENV}";
                     </script>
                     <script src="${bundle}"></script>
+                    <script type="text/javascript">
+                        window.saveData = function (data) {
+                            //  clear the localstorage
+                            delete localStorage.data;
+                            //  send this data to the server
+                            //  {data}
+                            alert(JSON.stringify(data));
+                        }
+                    </script>
                   </body>
                 </html>
             `;

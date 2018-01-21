@@ -38,7 +38,7 @@ export default class Fits extends Component {
                 <Header
                     stepNo={this.props.stepNo}
                     title="I like these fits"
-                    subtitle="Select all relevant options"
+                    subtitle="( Select all relevant options )"
                 />
                 <div className="content">
                     <div className="grid">

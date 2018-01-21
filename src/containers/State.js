@@ -10,7 +10,7 @@ const State = WrappedComponent => {
             this.nextStep = this.nextStep.bind(this);
             this.saveStepData = this.saveStepData.bind(this);
             this.getImage = this.getImage.bind(this);
-
+            this.totalSteps = 15;
             let data = Storage.get("data");
 
             let initialState = {
@@ -75,6 +75,9 @@ const State = WrappedComponent => {
                 },
                 () => {
                     saveStepData(this.state);
+                    if (nextStep === 15) {
+                        window.saveData(this.state.steps);
+                    }
                 }
             );
             this.props.history.push("/" + nextStep);

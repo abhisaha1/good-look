@@ -36,7 +36,7 @@ export default class Mode extends Component {
                                     to="#"
                                     onClick={e => this.handleClick(e, key)}
                                 >
-                                    <div className="grid-item">
+                                    <div className="grid-item grid-dark">
                                         {config.mode[key]}
                                     </div>
                                 </Link>

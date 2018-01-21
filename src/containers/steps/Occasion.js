@@ -31,7 +31,8 @@ export default class Occasion extends Component {
             <div>
                 <Header
                     stepNo={this.props.stepNo}
-                    title="Choose your styling method"
+                    title="What's the occasion"
+                    subtitle="( Choose upto three scenarios )"
                 />
                 <div className="content">
                     <div className="grid">
@@ -40,6 +41,8 @@ export default class Occasion extends Component {
                                 this.state.occasion.indexOf(item.label) >= 0
                                     ? "selected"
                                     : "";
+                            let colorClass =
+                                i < 5 ? " grid-dark" : " highlight";
                             return (
                                 <Link
                                     key={i}
@@ -47,8 +50,8 @@ export default class Occasion extends Component {
                                     to="#"
                                     onClick={e => this.handleClick(e, item)}
                                 >
-                                    <div className="grid-item">
-                                        {item.label}
+                                    <div className={"grid-item" + colorClass}>
+                                        <span>{item.label}</span>
                                     </div>
                                 </Link>
                             );

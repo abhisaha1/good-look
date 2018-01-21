@@ -37,7 +37,7 @@ export default class Style extends Component {
                 <Header
                     stepNo={this.props.stepNo}
                     title="What's your style"
-                    subtitle="..."
+                    subtitle="( Select all relevant options )"
                 />
                 <div className="content">
                     <div className="grid">

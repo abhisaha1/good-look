@@ -37,10 +37,10 @@ export default class Brand extends Component {
                 <Header
                     stepNo={this.props.stepNo}
                     title="Do you have a brand preference for nay of the below ?"
-                    subtitle="(Select all relevant options)"
+                    subtitle="( Select all relevant options )"
                 />
                 <div className="content">
-                    <div className="grid-6">
+                    <div className="grid grid-6">
                         {config.brand.map((item, idx) => {
                             let image = this.props.getImage(item);
                             let style = {
