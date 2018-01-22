@@ -1,8 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700");
+/*@import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700");*/
+
+@import "../css/fonts.css";
 @import "../css/react-select.css";
 @import "./calendar.scss";
 body {
-    font-family: "Nunito", sans-serif;
+    font-family: "Gotham", sans-serif;
     font-size: 12px;
     background: #eee;
 }
@@ -26,14 +28,14 @@ a:hover {
     margin-bottom: 80px;
 }
 
-.navbar-nav > li > a {
+.navbar-nav>li>a {
     padding-top: 0px;
     padding-bottom: 0px;
     line-height: 80px;
 }
 
 @media (max-width: 767px) {
-    .navbar-nav > li > a {
+    .navbar-nav>li>a {
         line-height: 20px;
         padding-top: 10px;
         padding-bottom: 10px;
@@ -99,7 +101,7 @@ a:hover {
         font-size: 16px;
         letter-spacing: 3px;
     }
-    > span {
+    >span {
         letter-spacing: 2px;
         font-size: 10px;
     }
@@ -149,7 +151,7 @@ h3.subtitle {
         align-items: center;
         justify-content: center;
         text-transform: uppercase;
-        &.highlight > span {
+        &.highlight>span {
             background: #eee;
             padding: 12px 24px;
         }
@@ -201,6 +203,7 @@ h3.subtitle {
     grid-gap: 16px;
 }
 
+
 /*-------------------------------
 [Radio Button Group]
 */
@@ -212,7 +215,7 @@ h3.subtitle {
         position: absolute;
         left: -9999em;
         top: -9999em;
-        & + label {
+        &+label {
             padding: 22px 40px;
             cursor: pointer;
             margin-right: 8px;
@@ -221,7 +224,7 @@ h3.subtitle {
             text-transform: uppercase;
             letter-spacing: 2px;
         }
-        &:checked + label {
+        &:checked+label {
             background-color: #000;
             color: #fff;
         }
@@ -367,6 +370,7 @@ input {
     }
 }
 
+
 /* Responsive */
 
 @media (max-width: 1075px) {
@@ -390,5 +394,4 @@ input {
     }
 }
 
-@media (max-width: 991px) {
-}
+@media (max-width: 991px) {}
