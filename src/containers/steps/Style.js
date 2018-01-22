@@ -69,10 +69,12 @@ export default class Style extends Component {
                         })}
                     </div>
                 </div>
-                <Next
-                    saveStepData={this.props.saveStepData}
-                    state={this.state}
-                />
+                {this.state.style.length > 0 && (
+                    <Next
+                        saveStepData={this.props.saveStepData}
+                        state={this.state}
+                    />
+                )}
             </div>
         );
     }

@@ -14,8 +14,10 @@ export default class Budget extends Component {
     }
 
     handleChange(e) {
-        e.preventDefault();
-        this.setState({ budget: e.target.value });
+        if (!isNaN(e.target.value)) {
+            e.preventDefault();
+            this.setState({ budget: e.target.value });
+        }
     }
 
     render() {
@@ -28,15 +30,17 @@ export default class Budget extends Component {
                             className="input-budget text-center"
                             type="text"
                             placeholder="BUDGET IN AUD"
-                            onBlur={this.handleChange}
-                            defaultValue={this.state.budget}
+                            onChange={this.handleChange}
+                            value={this.state.budget}
                         />
                     </div>
                 </div>
-                <Next
-                    saveStepData={this.props.saveStepData}
-                    state={this.state}
-                />
+                {this.state.budget != "" && (
+                    <Next
+                        saveStepData={this.props.saveStepData}
+                        state={this.state}
+                    />
+                )}
             </div>
         );
     }

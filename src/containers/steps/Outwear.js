@@ -69,10 +69,12 @@ export default class Outwear extends Component {
                         })}
                     </div>
                 </div>
-                <Next
-                    saveStepData={this.props.saveStepData}
-                    state={this.state}
-                />
+                {this.state.outwear.length > 0 && (
+                    <Next
+                        saveStepData={this.props.saveStepData}
+                        state={this.state}
+                    />
+                )}
             </div>
         );
     }

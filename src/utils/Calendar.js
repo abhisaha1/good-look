@@ -1,6 +1,6 @@
 const Calendar = {
     init: function(date = new Date(), onSelect = () => {}) {
-        var clickdate = "" + date;
+        this.clickdate = "" + date;
         this.date = date;
         this.selected = date;
         this.onSelect = onSelect;
@@ -23,9 +23,12 @@ const Calendar = {
         this.createMonth();
         this.createListeners();
 
-        document
-            .querySelector("[data-calendar-date='" + clickdate + "']")
-            .click();
+        var a = document.querySelector(
+            "[data-calendar-date='" + this.clickdate + "']"
+        );
+        if (a) {
+            a.click();
+        }
     },
     createListeners: function() {
         var t = this;
@@ -34,8 +37,9 @@ const Calendar = {
             var e = t.date.getMonth() + 1;
             t.date.setMonth(e);
             t.createMonth();
+
             let selected = document.querySelector(
-                "[data-calendar-date='" + t.selected + "']"
+                "[data-calendar-date='" + t.clickdate + "']"
             );
             selected && selected.click();
         });
@@ -45,7 +49,7 @@ const Calendar = {
             t.date.setMonth(e);
             t.createMonth();
             let selected = document.querySelector(
-                "[data-calendar-date='" + t.selected + "']"
+                "[data-calendar-date='" + t.clickdate + "']"
             );
             selected && selected.click();
         });

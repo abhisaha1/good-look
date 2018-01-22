@@ -69,10 +69,12 @@ export default class Wear extends Component {
                         })}
                     </div>
                 </div>
-                <Next
-                    saveStepData={this.props.saveStepData}
-                    state={this.state}
-                />
+                {this.state.wear.length > 0 && (
+                    <Next
+                        saveStepData={this.props.saveStepData}
+                        state={this.state}
+                    />
+                )}
             </div>
         );
     }

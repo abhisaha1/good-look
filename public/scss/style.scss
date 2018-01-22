@@ -122,6 +122,10 @@ h2.subheader {
     letter-spacing: 1px;
 }
 
+.dayPhases {
+    text-align: center;
+}
+
 h3.subtitle {
     font-size: 12px;
     text-transform: uppercase;
@@ -226,6 +230,7 @@ h3.subtitle {
 
 .city-block {
     padding-left: 60px;
+    position: initial;
 }
 
 .mt-60 {
@@ -350,5 +355,40 @@ input {
     .Select-menu-outer {
         width: 490px;
         border-radius: 0px;
+        .Select-option {
+            padding: 16px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            border-radius: 0px;
+            border: none;
+        }
     }
+}
+
+/* Responsive */
+
+@media (max-width: 1075px) {
+    .cal-wrapper {
+        width: 100%;
+        .cal {
+            margin: auto;
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 80px;
+            .cal__header {
+                padding: 1.2rem 4rem;
+            }
+        }
+    }
+    .city-block {
+        padding-left: 0px;
+        width: 100%;
+        text-align: center;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 991px) {
 }

@@ -103,10 +103,13 @@ export default class Fits extends Component {
                         })}
                     </div>
                 </div>
-                <Next
-                    saveStepData={this.props.saveStepData}
-                    state={this.state}
-                />
+                {this.state.fits.length > 0 &&
+                    this.state.patterns.length > 0 && (
+                        <Next
+                            saveStepData={this.props.saveStepData}
+                            state={this.state}
+                        />
+                    )}
             </div>
         );
     }

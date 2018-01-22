@@ -13,7 +13,9 @@ const styles = {
         margin: "40px 34px"
     },
     cityBlock: {
-        padding: "50px 0px"
+        padding: "50px 0px",
+        width: 490,
+        margin: "auto"
     }
 };
 
@@ -22,12 +24,14 @@ export default class Appointment extends Component {
         super(props);
         this.handleChange = this.handleChange.bind(this);
         let date = new Date();
+        date.setDate(date.getDate() + 1);
+
         if (this.props.steps.date) {
             date = new Date(this.props.steps.date);
         }
         this.state = {
-            location: this.props.steps.location,
-            dayPhase: this.props.steps.dayPhase,
+            location: this.props.steps.location || "BB",
+            dayPhase: this.props.steps.dayPhase || "MORNING",
             date: date
         };
     }
@@ -38,7 +42,7 @@ export default class Appointment extends Component {
         });
     }
 
-    handleChange(obj) {
+    handleChange(e, obj) {
         this.setState({ ...obj });
     }
 
@@ -62,7 +66,7 @@ export default class Appointment extends Component {
                         value={key}
                         {...checked}
                         onChange={e =>
-                            this.handleChange({ dayPhase: e.target.value })
+                            this.handleChange(e, { dayPhase: e.target.value })
                         }
                     />
                     <label htmlFor={"rb-" + key}>{config.dayPhase[key]}</label>
@@ -77,7 +81,7 @@ export default class Appointment extends Component {
                 />
                 <div className="content">
                     <div className="row" style={styles.block}>
-                        <div className="col-lg-5">
+                        <div className="col-lg-5 col-md-4 col-sm-12 cal-wrapper">
                             <div className="cal">
                                 <div className="cal__header">
                                     <button
@@ -139,22 +143,27 @@ export default class Appointment extends Component {
                                 />
                             </div>
                         </div>
-                        <div className="col-lg-7 city-block">
-                            <div style={styles.cityBlock}>
-                                <Select
-                                    value={this.state.location}
-                                    onChange={selectedOption =>
-                                        this.handleChange({
-                                            location: selectedOption.value
-                                        })
-                                    }
-                                    options={cities}
-                                    searchable={false}
-                                    clearable={false}
-                                />
-                            </div>
-                            <div className="location">
-                                <div className="rb-wrapper">{dayPhases}</div>
+                        <div className="col-lg-7 col-md-8 co-sm-12 city-block">
+                            <div className="right-col">
+                                <div style={styles.cityBlock}>
+                                    <Select
+                                        value={this.state.location}
+                                        onChange={e =>
+                                            this.handleChange(e, {
+                                                location: e.value
+                                            })
+                                        }
+                                        options={cities}
+                                        searchable={false}
+                                        clearable={false}
+                                        closeOnSelect={false}
+                                    />
+                                </div>
+                                <div className="dayPhases">
+                                    <div className="rb-wrapper">
+                                        {dayPhases}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

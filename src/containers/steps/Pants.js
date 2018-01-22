@@ -103,10 +103,13 @@ export default class Pants extends Component {
                         })}
                     </div>
                 </div>
-                <Next
-                    saveStepData={this.props.saveStepData}
-                    state={this.state}
-                />
+                {this.state.pants.length > 0 &&
+                    this.state.pantfits.length > 0 && (
+                        <Next
+                            saveStepData={this.props.saveStepData}
+                            state={this.state}
+                        />
+                    )}
             </div>
         );
     }

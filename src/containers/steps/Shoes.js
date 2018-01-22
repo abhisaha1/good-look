@@ -69,10 +69,12 @@ export default class Shoes extends Component {
                         })}
                     </div>
                 </div>
-                <Next
-                    saveStepData={this.props.saveStepData}
-                    state={this.state}
-                />
+                {this.state.shoes.length > 0 && (
+                    <Next
+                        saveStepData={this.props.saveStepData}
+                        state={this.state}
+                    />
+                )}
             </div>
         );
     }

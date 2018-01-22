@@ -3,18 +3,19 @@ import Header from "../../components/Header";
 import { Link } from "react-router-dom";
 import { config } from "../../utils/common";
 import Next from "../../components/Next";
+import PropTypes from "prop-types";
 
 export default class Mode extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            mode: this.props.steps.mode
+            mode: this.props.steps.mode || ""
         };
     }
 
     handleClick(e, key) {
         e.preventDefault();
-        this.props.saveStepData({ steps: { mode: key } });
+        this.setState({ mode: key });
     }
 
     render() {
@@ -44,10 +45,12 @@ export default class Mode extends Component {
                         })}
                     </div>
                 </div>
-                <Next
-                    saveStepData={this.props.saveStepData}
-                    state={this.state}
-                />
+                {this.state.mode != "" && (
+                    <Next
+                        saveStepData={this.props.saveStepData}
+                        state={this.state}
+                    />
+                )}
             </div>
         );
     }

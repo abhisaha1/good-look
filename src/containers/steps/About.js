@@ -58,6 +58,12 @@ export default class About extends Component {
             let found = this.state.about[type] == item;
             return found ? "selected" : "";
         };
+        const about = this.state.about;
+        let isValid = true;
+        if (about.name == "" || about.email == "" || about.hair == "") {
+            isValid = false;
+        }
+
         return (
             <div>
                 <Header stepNo={this.props.stepNo} title="About You" />
@@ -70,7 +76,7 @@ export default class About extends Component {
                                     style={styles.input}
                                     type="text"
                                     placeholder="Your name*"
-                                    onBlur={e => this.handleChange(e, "name")}
+                                    onChange={e => this.handleChange(e, "name")}
                                     defaultValue={this.state.about.name}
                                 />
                             </div>
@@ -82,7 +88,9 @@ export default class About extends Component {
                                     style={styles.input}
                                     type="text"
                                     placeholder="Your email*"
-                                    onBlur={e => this.handleChange(e, "email")}
+                                    onChange={e =>
+                                        this.handleChange(e, "email")
+                                    }
                                     defaultValue={this.state.about.name}
                                 />
                             </div>
@@ -237,10 +245,12 @@ export default class About extends Component {
                         </div>
                     </div>
                 </div>
-                <Next
-                    saveStepData={this.props.saveStepData}
-                    state={this.state}
-                />
+                {isValid && (
+                    <Next
+                        saveStepData={this.props.saveStepData}
+                        state={this.state}
+                    />
+                )}
             </div>
         );
     }

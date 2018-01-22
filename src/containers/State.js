@@ -67,6 +67,10 @@ const State = WrappedComponent => {
         saveStepData(obj) {
             saveStepData(obj);
             let nextStep = this.state.stepNo + 1;
+            if (obj.steps.mode == "ONLINE") {
+                nextStep += 1;
+                this.state.stepNo += 1;
+            }
             this.setState(
                 {
                     steps: getTempData().steps,

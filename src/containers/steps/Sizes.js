@@ -132,10 +132,15 @@ export default class Sizes extends Component {
                         })}
                     </div>
                 </div>
-                <Next
-                    saveStepData={this.props.saveStepData}
-                    state={this.state}
-                />
+                {this.state.sizes_uw != "" &&
+                    this.state.sizes_shirts != "" &&
+                    this.state.sizes_pj != "" &&
+                    this.state.sizes_shoes != "" && (
+                        <Next
+                            saveStepData={this.props.saveStepData}
+                            state={this.state}
+                        />
+                    )}
             </div>
         );
     }
