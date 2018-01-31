@@ -85,6 +85,12 @@ const State = WrappedComponent => {
                 }
             );
             this.props.history.push("/" + nextStep);
+
+            setTimeout(() => {
+                var height = document.getElementsByTagName("html")[0]
+                    .scrollHeight;
+                window.parent.postMessage(["setHeight", height], "*");
+            }, 10);
         }
 
         render() {
