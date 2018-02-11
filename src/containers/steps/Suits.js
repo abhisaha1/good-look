@@ -31,8 +31,7 @@ export default class Suits extends Component {
                         {config.suits.map((item, idx) => {
                             let image = this.props.getImage(item);
                             let style = {
-                                backgroundImage: `url("${image}")`,
-                                height: 600
+                                backgroundImage: `url("${image}")`
                             };
                             let classes = getClass(item);
 

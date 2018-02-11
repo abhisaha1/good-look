@@ -45,8 +45,7 @@ export default class Fits extends Component {
                         {config.fits.map((item, idx) => {
                             let image = this.props.getImage(item);
                             let style = {
-                                backgroundImage: `url("${image}")`,
-                                height: 600
+                                backgroundImage: `url("${image}")`
                             };
                             let classes = getClass(item, "fits");
 
@@ -76,8 +75,7 @@ export default class Fits extends Component {
                         {config.patterns.map((item, idx) => {
                             let image = this.props.getImage(item);
                             let style = {
-                                backgroundImage: `url("${image}")`,
-                                height: 600
+                                backgroundImage: `url("${image}")`
                             };
                             let classes = getClass(item, "patterns");
 

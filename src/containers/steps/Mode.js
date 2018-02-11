@@ -26,7 +26,12 @@ export default class Mode extends Component {
                     title="Choose your styling method"
                 />
                 <div className="content">
-                    <div className="grid">
+                    <div
+                        className="grid"
+                        style={{
+                            gridTemplateColumns: "repeat(auto-fit, 420px)"
+                        }}
+                    >
                         {Object.keys(config.mode).map((key, i) => {
                             let classes =
                                 key === this.state.mode ? "selected" : "";
@@ -37,7 +42,10 @@ export default class Mode extends Component {
                                     to="#"
                                     onClick={e => this.handleClick(e, key)}
                                 >
-                                    <div className="grid-item grid-dark">
+                                    <div
+                                        className="grid-item grid-dark"
+                                        style={{ height: 240 }}
+                                    >
                                         {config.mode[key]}
                                     </div>
                                 </Link>

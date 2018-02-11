@@ -10,6 +10,7 @@ const State = WrappedComponent => {
             this.nextStep = this.nextStep.bind(this);
             this.saveStepData = this.saveStepData.bind(this);
             this.getImage = this.getImage.bind(this);
+            this.clearState = this.clearState.bind(this);
             this.totalSteps = 15;
             let data = Storage.get("data");
 
@@ -63,6 +64,13 @@ const State = WrappedComponent => {
                 this.props.history.push("/" + stepNo);
             });
         }
+        clearState() {
+            this.setState({
+                stepNo: 1,
+                stepsCompleted: 0,
+                steps: {}
+            });
+        }
 
         saveStepData(obj) {
             saveStepData(obj);
@@ -81,14 +89,14 @@ const State = WrappedComponent => {
                     saveStepData(this.state);
                     if (nextStep === 15) {
                         window.saveData(this.state.steps);
+                        setTimeout(this.clearState, 10);
                     }
                 }
             );
             this.props.history.push("/" + nextStep);
 
             setTimeout(() => {
-                var height = document.getElementsByTagName("html")[0]
-                    .scrollHeight;
+                var height = document.querySelector("html").scrollHeight;
                 window.parent.postMessage(["setHeight", height], "*");
             }, 10);
         }
@@ -111,3 +119,38 @@ const State = WrappedComponent => {
 };
 
 export default State;
+
+// var a = {
+//     mode: "ONLINE",
+//     occasion: ["Smart casual leisure"],
+//     style: ["Sporty"],
+//     brand: ["Adidas"],
+//     wear: ["Long Sleeves"],
+//     fits: ["Relaxed"],
+//     patterns: ["Striped"],
+//     outwear: ["Down Vests"],
+//     pants: ["Chinos"],
+//     pantfits: ["Straight Leg"],
+//     suits: "Regular",
+//     shoes: ["Canvas Sneakers", "Slippers"],
+//     sizes_uw: "xxl",
+//     sizes_shirts: "46 - xxl",
+//     sizes_pj: 35,
+//     sizes_shoes: "11/46",
+//     budget: "123",
+//     about: {
+//         name: "name",
+//         email: "email",
+//         phone: "111111",
+//         age: "23",
+//         height: "5.3",
+//         weight: "52",
+//         houseNo: "59",
+//         road: "wisbyer",
+//         suburb: "superb",
+//         city: "berlin",
+//         postcode: "10432",
+//         hair: "Red",
+//         note: "note added"
+//     }
+// };

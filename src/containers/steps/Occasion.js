@@ -35,7 +35,12 @@ export default class Occasion extends Component {
                     subtitle="( Choose upto three scenarios )"
                 />
                 <div className="content">
-                    <div className="grid">
+                    <div
+                        className="grid"
+                        style={{
+                            gridTemplateColumns: "repeat(auto-fit, 380px)"
+                        }}
+                    >
                         {config.occasion.map((item, i) => {
                             let classes =
                                 this.state.occasion.indexOf(item.label) >= 0
@@ -50,7 +55,10 @@ export default class Occasion extends Component {
                                     to="#"
                                     onClick={e => this.handleClick(e, item)}
                                 >
-                                    <div className={"grid-item" + colorClass}>
+                                    <div
+                                        className={"grid-item" + colorClass}
+                                        style={{ height: 240 }}
+                                    >
                                         <span>{item.label}</span>
                                     </div>
                                 </Link>

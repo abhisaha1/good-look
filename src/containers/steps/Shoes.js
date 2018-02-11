@@ -45,7 +45,8 @@ export default class Shoes extends Component {
                             let image = this.props.getImage(item);
                             let style = {
                                 backgroundImage: `url("${image}")`,
-                                height: 368
+                                height: 235,
+                                backgroundPositionY: -54
                             };
                             let classes = getClass(item);
 

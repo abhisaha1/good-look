@@ -13,14 +13,21 @@
 
 <body id="client">
     <div id="app"></div>
-    <script src="public/js/src-bundle.js?6"></script>
+    <script src="public/js/src-bundle.js?7"></script>
     <script type="text/javascript">
         window.saveData = function (data) {
+            data.created_at = new Date();
             //  clear the localstorage
             delete localStorage.data;
             //  send this data to the server
             //  {data}
-            alert(JSON.stringify(data));
+            var formData = new FormData();
+            formData.append('data', JSON.stringify(data));
+            fetch("http://squarespace.toddcantley.com/api.php", {
+                method: "POST",
+                body: formData,
+            }).then(res => { console.log(res.text()) });
+
         }
     </script>
 </body>

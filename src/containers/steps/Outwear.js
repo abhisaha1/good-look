@@ -44,8 +44,7 @@ export default class Outwear extends Component {
                         {config.outwear.map((item, idx) => {
                             let image = this.props.getImage(item);
                             let style = {
-                                backgroundImage: `url("${image}")`,
-                                height: 600
+                                backgroundImage: `url("${image}")`
                             };
                             let classes = getClass(item);
 
